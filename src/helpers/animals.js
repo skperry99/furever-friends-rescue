@@ -1,13 +1,13 @@
 import gp from "../assets/images/guinea-pig.jpg";
 import gp2 from "../assets/images/guinea-pig-2.jpg";
 import goat from "../assets/images/goat.jpg";
-import snake from "../assets/images/snake.png";
+import snake from "../assets/images/snake.jpg";
 import cat1 from "../assets/images/cat1.jpg";
 import cat3 from "../assets/images/cat3.jpg";
 import cat4 from "../assets/images/cat4.jpg";
 import dog from "../assets/images/dog.jpg";
 import dog2 from "../assets/images/dog2.jpg";
-import dog3 from "../assets/images/dog3.png";
+import dog3 from "../assets/images/dog3.jpg";
 import dog4 from "../assets/images/dog4.jpg";
 import dog5 from "../assets/images/dog5.jpg";
 
