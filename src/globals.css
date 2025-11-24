@@ -50,11 +50,25 @@ h4 {
   font-weight: 400;
 }
 
+/* Base paragraph styling */
 p {
   line-height: 1.7;
-  margin: 0 auto;
-  padding: 12px 16px;
-  max-width: 72ch; /* readable width */
+  margin: 0;
+  padding: 0;
+}
+
+/* Page content wrapper for main copy/text + layouts */
+.pageContent {
+  max-width: 1100px; /* constrain width */
+  margin: 0 auto; /* center on the page */
+  padding: 16px;
+}
+
+/* Comfy text width for paragraphs inside main content */
+.pageContent p {
+  max-width: 72ch;
+  margin: 0 auto 1rem;
+  padding: 12px 0;
 }
 
 /* Images & buttons */
@@ -300,6 +314,18 @@ textarea:focus-visible {
   gap: 20px;
   width: 100%;
   align-items: stretch;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.animals-grid > li {
+  height: 100%;
+}
+
+.animals-grid__empty {
+  width: 100%;
+  text-align: center;
 }
 
 .animalsLayout {
@@ -332,24 +358,10 @@ textarea:focus-visible {
 .animalCard p {
   overflow: hidden;
   text-overflow: ellipsis;
-
-  /* Fallback (widest current support) */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
-
-  /* Standard property (newer browsers) */
   line-clamp: 4;
-}
-
-/* Prefer the standard when supported */
-@supports (line-clamp: 4) {
-  .animalCard p {
-    display: block; /* no need for the WebKit flexbox hack */
-    -webkit-box-orient: initial;
-    -webkit-line-clamp: initial;
-    line-clamp: initial;
-  }
 }
 
 .animalCard a {
@@ -375,12 +387,48 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
-/* Image sizing via CSS instead of width/height attrs */
-.animalPic {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+/* Adoption page layout: pet details + form */
+.adoptionLayout {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+  margin: 12px 0 20px;
+}
+
+/* Stack on small screens, side-by-side on larger ones */
+@media (min-width: 900px) {
+  .adoptionLayout {
+    grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  }
+}
+
+.adoptionDetails {
+  border: 4px solid var(--ink);
   border-radius: 10px;
+  padding: 12px;
+  background-color: var(--brand-teal-100);
+}
+
+.adoptionDetails__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.adoptionDetails__name {
+  margin-bottom: 6px;
+}
+
+.adoptionDetails__story {
+  line-height: 1.5;
+  /* important: no line-clamp here so the full story shows */
+}
+
+.adoptionFormWrapper {
+  /* let the form grow and shrink nicely */
+  min-width: 0;
 }
 
 /* Forms */
@@ -424,13 +472,15 @@ textarea::placeholder {
 }
 
 /* Lists */
-.careersList,
-.volunteerList {
-  display: inline-block;
+.pageContent .careersList,
+.pageContent .volunteerList {
   list-style-type: square;
-  margin: 0 auto;
-  padding: 8px 0;
+  max-width: 64ch;          /* slightly narrower than 72ch paragraphs */
+  margin: 0 auto 1rem;      /* center the block, add bottom space */
+  padding: 8px 0 8px 1.2rem;/* small left padding so bullets aren't glued to edge */
+  list-style-position: outside;
 }
+
 .careersListItem,
 .volunteerListItem {
   line-height: 1.5;
@@ -569,9 +619,7 @@ textarea::placeholder {
   h4 {
     font-size: 0.9rem;
   }
-}
-/* Stories – tiny screens */
-@media (max-width: 480px) {
+  /* Stories – tiny screens */
   .storyList {
     gap: 14px;
     margin: 24px auto;
@@ -631,12 +679,18 @@ textarea::placeholder {
 }
 
 /* About */
+/* Outer section just provides background/padding if needed */
 .aboutPage {
+  padding: 16px;
+}
+
+/* The actual two-column layout lives on pageContent */
+.aboutPage .pageContent {
   display: grid;
   gap: 20px;
   align-items: start;
-  padding: 16px;
 }
+
 .aboutMedia img {
   width: 100%;
   max-width: 700px;
@@ -645,13 +699,22 @@ textarea::placeholder {
   display: block;
   margin: 0 auto;
 }
+
+/* Make the about text nicely readable */
+.aboutText p {
+  max-width: 72ch;
+  margin: 0 auto 1rem;
+  padding: 12px 0;
+}
+
+/* Make the about heading nicely spaced */
 .aboutText > h2 {
   margin-bottom: 8px;
 }
 
 /* Two-column layout on wider screens */
 @media (min-width: 900px) {
-  .aboutPage {
+  .aboutPage .pageContent {
     grid-template-columns: 1fr 1.2fr; /* image | text */
   }
 }
