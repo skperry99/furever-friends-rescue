@@ -6,7 +6,7 @@ export default function AboutPage({ title = "About Us" }) {
       <div className="aboutMedia">
         <img
           src={shelter2}
-          alt="Exterior of Bark Avenue Rescue Kennel"
+          alt="Exterior of Furever Friends Rescue"
           loading="lazy"
           decoding="async"
         />
@@ -31,8 +31,8 @@ export default function AboutPage({ title = "About Us" }) {
           humans. We focus on perfect matches—even if it means a few “symphonies
           of protest” from Eddie. If you’re ready for a companion who will keep
           you entertained, occasionally challenge your sanity, and always offer
-          love, you’ve come to the right place. Visit Bark Avenue Rescue Kennel
-          and find your purr-fectly imperfect match!
+          love, you’ve come to the right place. Visit Furever Friends Rescue and
+          find your purr-fectly imperfect match!
         </p>
       </div>
     </section>

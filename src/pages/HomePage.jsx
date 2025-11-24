@@ -1,7 +1,7 @@
 import homePic from "../assets/images/home.jpg";
 
 export default function HomePage({
-  title = "Welcome to Bark Avenue Rescue Kennel",
+  title = "Welcome to Furever Friends Rescue",
 }) {
   return (
     <section className="homePage" aria-labelledby="home-heading">

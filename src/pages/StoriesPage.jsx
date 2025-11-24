@@ -1,4 +1,4 @@
-// adopt-me/src/pages/StoriesPage.jsx
+// furever-friends-rescue/src/pages/StoriesPage.jsx
 import { useState } from "react";
 import StoryForm from "../components/StoryForm.jsx";
 import StoryList from "../components/StoryList.jsx";

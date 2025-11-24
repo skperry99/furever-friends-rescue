@@ -10,7 +10,7 @@ export default function ContactPage({ title = "Contact Us" }) {
         <figure className="contactMedia">
           <img
             src={shelter}
-            alt="Exterior of Bark Avenue Rescue Kennel"
+            alt="Exterior of Furever Friends Rescue"
             loading="lazy"
             decoding="async"
           />

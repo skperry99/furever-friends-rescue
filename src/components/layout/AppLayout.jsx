@@ -7,7 +7,7 @@ import banner from "../../assets/images/banner-graphic.jpg";
 export default function AppLayout() {
   return (
     <>
-      <Header title="Bark Avenue Rescue Kennel" imageUrl={banner} />
+      <Header title="Furever Friends Rescue" imageUrl={banner} />
       <Navbar />
       <main role="main">
         <Outlet />

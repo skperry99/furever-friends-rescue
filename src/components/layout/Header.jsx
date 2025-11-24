@@ -1,4 +1,4 @@
-const Header = ({ title = "Bark Avenue Rescue Kennel", imageUrl }) => {
+const Header = ({ title = "Furever Friends Rescue", imageUrl }) => {
   return (
     <header
       className="header"

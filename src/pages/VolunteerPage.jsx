@@ -4,7 +4,7 @@ export default function VolunteerPage({ title = "Volunteer with Us" }) {
       <h2 id="volunteer-heading">{title}</h2>
 
       <p>
-        <strong>Unleash your potential:</strong> Bark Avenue Rescue Kennel is
+        <strong>Unleash your potential:</strong> Furever Friends Rescue is
         seeking human pack members! Do you possess an uncanny ability to
         decipher a cat’s side-eye or a dog’s “I need to go outside in five
         minutes” dance? Do you find joy in the aroma of wet dog and the symphony

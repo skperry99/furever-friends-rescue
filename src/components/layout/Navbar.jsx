@@ -9,7 +9,12 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <NavLink to="/" end aria-label="Go to Home" onClick={closeMenu}>
-        <img src={logo} id="navLogo" height="60" alt="BARK logo: cat and dog" />
+        <img
+          src={logo}
+          id="navLogo"
+          height="60"
+          alt="Furever Friends Rescue logo: cat and dog"
+        />
       </NavLink>
 
       {/* Mobile toggle button */}

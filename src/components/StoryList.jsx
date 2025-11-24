@@ -1,4 +1,4 @@
-// adopt-me/src/components/StoryList.jsx
+// furever-friends-rescue/src/components/StoryList.jsx
 
 /**
  * Presentational list of adoption stories.

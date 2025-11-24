@@ -1,7 +1,7 @@
 // src/app/App.jsx
 import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AppLayout from "../components/layout/AppLayout";
+import AppLayout from "../components/layout/AppLayout.jsx";
 
 const HomePage = lazy(() => import("../pages/HomePage.jsx"));
 const AboutPage = lazy(() => import("../pages/AboutPage.jsx"));
@@ -21,9 +21,7 @@ export default function App() {
           <Route element={<AppLayout />}>
             <Route
               index
-              element={
-                <HomePage title="Welcome to Bark Avenue Rescue Kennel" />
-              }
+              element={<HomePage title="Welcome to Furever Friends Rescue" />}
             />
             <Route path="about" element={<AboutPage title="About Us" />} />
             <Route
@@ -43,7 +41,7 @@ export default function App() {
             <Route
               path="careers"
               element={
-                <CareersPage title="Join the Circus (of Cuddles and Chaos) at Bark Avenue!" />
+                <CareersPage title="Join the Circus (of Cuddles and Chaos) at Furever Friends Rescue!" />
               }
             />
             <Route

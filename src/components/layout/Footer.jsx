@@ -30,7 +30,9 @@ export default function Footer() {
         </li>
       </ul>
 
-      <p className="footer-copy">&copy; {new Date().getFullYear()} BARK</p>
+      <p className="footer-copy">
+        &copy; {new Date().getFullYear()} Furever Friends Rescue
+      </p>
     </footer>
   );
 }

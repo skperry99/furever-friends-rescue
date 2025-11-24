@@ -1,5 +1,5 @@
 export default function CareersPage({
-  title = "Join the Circus (of Cuddles and Chaos) at Bark Avenue!",
+  title = "Join the Circus (of Cuddles and Chaos) at Furever Friends Rescue!",
 }) {
   return (
     <section className="careersPage" aria-labelledby="careers-heading">
