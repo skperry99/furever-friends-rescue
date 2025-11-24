@@ -66,7 +66,7 @@ export default function CareersPage({
           Ready for a job where every day is an adventure and colleagues have
           fur and four legs? Send a resume (and a short story about your most
           memorable animal encounter) to{" "}
-          <a href="mailto:woof@bark.org">woof@bark.org</a>. We’re excited to
+          <a href="mailto:adopt@fureverfriendsrescue.org">adopt@fureverfriendsrescue.org</a>. We’re excited to
           meet you— and so are the residents!
         </p>
       </div>

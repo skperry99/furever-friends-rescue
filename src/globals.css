@@ -57,16 +57,18 @@ p {
   padding: 0;
 }
 
-/* Page content wrapper for main copy text */
+/* Page content wrapper for main copy/text + layouts */
 .pageContent {
-  padding: 16px; /* general page padding */
+  max-width: 1100px; /* constrain width */
+  margin: 0 auto; /* center on the page */
+  padding: 16px;
 }
 
-/* Apply comfy width + spacing only to text inside pageContent */
+/* Comfy text width for paragraphs inside main content */
 .pageContent p {
   max-width: 72ch;
   margin: 0 auto 1rem;
-  padding: 12px 0; /* vertical rhythm only; no extra side padding */
+  padding: 12px 0;
 }
 
 /* Images & buttons */
@@ -317,6 +319,10 @@ textarea:focus-visible {
   margin: 0;
 }
 
+.animals-grid > li {
+  height: 100%;
+}
+
 .animals-grid__empty {
   width: 100%;
   text-align: center;
@@ -466,13 +472,15 @@ textarea::placeholder {
 }
 
 /* Lists */
-.careersList,
-.volunteerList {
-  display: inline-block;
+.pageContent .careersList,
+.pageContent .volunteerList {
   list-style-type: square;
-  margin: 0 auto;
-  padding: 8px 0;
+  max-width: 64ch;          /* slightly narrower than 72ch paragraphs */
+  margin: 0 auto 1rem;      /* center the block, add bottom space */
+  padding: 8px 0 8px 1.2rem;/* small left padding so bullets aren't glued to edge */
+  list-style-position: outside;
 }
+
 .careersListItem,
 .volunteerListItem {
   line-height: 1.5;
@@ -671,12 +679,18 @@ textarea::placeholder {
 }
 
 /* About */
+/* Outer section just provides background/padding if needed */
 .aboutPage {
+  padding: 16px;
+}
+
+/* The actual two-column layout lives on pageContent */
+.aboutPage .pageContent {
   display: grid;
   gap: 20px;
   align-items: start;
-  padding: 16px;
 }
+
 .aboutMedia img {
   width: 100%;
   max-width: 700px;
@@ -685,13 +699,22 @@ textarea::placeholder {
   display: block;
   margin: 0 auto;
 }
+
+/* Make the about text nicely readable */
+.aboutText p {
+  max-width: 72ch;
+  margin: 0 auto 1rem;
+  padding: 12px 0;
+}
+
+/* Make the about heading nicely spaced */
 .aboutText > h2 {
   margin-bottom: 8px;
 }
 
 /* Two-column layout on wider screens */
 @media (min-width: 900px) {
-  .aboutPage {
+  .aboutPage .pageContent {
     grid-template-columns: 1fr 1.2fr; /* image | text */
   }
 }
