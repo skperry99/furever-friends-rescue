@@ -6,27 +6,21 @@ export default function AnimalsPage({ title = "Available Animals" }) {
 
   return (
     <section className="animalsLayout" aria-labelledby="animals-heading">
-      <h2 id="animals-heading" style={{ width: "100%" }}>
-        {title}
-      </h2>
+      {/* Page intro wrapper for heading / any future copy */}
+      <div className="pageContent">
+        <h2 id="animals-heading">{title}</h2>
+      </div>
 
-      <ul
-        className="animals-grid"
-        style={{ listStyle: "none", padding: 0, margin: 0, width: "100%" }}
-      >
+      <ul className="animals-grid" aria-label="Available animals">
         {hasAnimals ? (
           animals.map((animal) => (
-            <li key={animal.id} style={{ display: "contents" }}>
+            <li key={animal.id}>
               <AvailableAnimal animal={animal} />
             </li>
           ))
         ) : (
-          <li style={{ width: "100%" }}>
-            <p
-              role="status"
-              aria-live="polite"
-              style={{ textAlign: "center", padding: "1rem" }}
-            >
+          <li className="animals-grid__empty">
+            <p role="status" aria-live="polite">
               No animals available at the moment.
             </p>
           </li>

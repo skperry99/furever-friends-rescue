@@ -1,4 +1,3 @@
-// furever-friends-rescue/src/pages/StoriesPage.jsx
 import { useState } from "react";
 import StoryForm from "../components/StoryForm.jsx";
 import StoryList from "../components/StoryList.jsx";
@@ -21,16 +20,18 @@ export default function StoriesPage() {
 
   return (
     <section className="storiesPage" aria-labelledby="stories-heading">
-      <h2 id="stories-heading" className="storiesPage__title">
-        Adoption Stories
-      </h2>
+      <div className="pageContent">
+        <h2 id="stories-heading" className="storiesPage__title">
+          Adoption Stories
+        </h2>
 
-      <StoryList
-        stories={stories}
-        emptyMessage="No adoption stories yet — be the first to share your happy tail!"
-      />
+        <StoryList
+          stories={stories}
+          emptyMessage="No adoption stories yet — be the first to share your happy tail!"
+        />
 
-      <StoryForm onSubmit={handleNewStory} />
+        <StoryForm onSubmit={handleNewStory} />
+      </div>
     </section>
   );
 }

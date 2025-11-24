@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-export default function Form() {
+export default function Form({ selectedAnimalName = "" }) {
   const { animalName } = useParams();
-  const initialName = animalName ? decodeURIComponent(animalName) : "";
+
+  // slug from route (e.g. "mr-whiskers") – may be empty on Contact page
+  const initialNameFromRoute = animalName ? decodeURIComponent(animalName) : "";
+
+  // prefer the pretty name from props, fall back to route if needed
+  const initialName = selectedAnimalName || initialNameFromRoute;
 
   const [animalNameForm, setAnimalNameForm] = useState(initialName);
   const [formData, setFormData] = useState({
@@ -15,9 +20,11 @@ export default function Form() {
   const [submitMessage, setSubmitMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
 
-  const isAdoptMode = Boolean(animalName); // page route decides mode
+  // true when we’re on /adoption or /adoption/:slug
+  const isAdoptMode = Boolean(animalName || selectedAnimalName);
 
   useEffect(() => {
+    // keep the form field in sync if the selected animal changes
     setAnimalNameForm(initialName);
   }, [initialName]);
 
@@ -34,8 +41,6 @@ export default function Form() {
           animalNameForm || "this pet"
         }! We will contact you soon.`
       : "Thank you! We will contact you soon.";
-
-    // (If you later post to an API, do it here.)
 
     // Reset fields (keep animal name filled in adopt mode)
     setFormData({ firstName: "", lastName: "", email: "", message: "" });
