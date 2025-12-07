@@ -90,3 +90,10 @@ The project showcases modern front-end practices with **React**, **React Router*
 - Git & GitHub
 - Prettier
 - Netlify (deployment & hosting)
+
+---
+
+## License
+
+This project is licensed under the MIT License – see the [LICENSE](./LICENSE) file for details.
+
